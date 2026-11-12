@@ -1,0 +1,366 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Vedant Rathore | Cricket Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #05080f;
+    --blue: #168cff;
+    --red: #ff304d;
+    --white: #f4f7ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(0,120,255,.18), transparent 45%),
+        radial-gradient(ellipse at 90% 85%, rgba(255,35,65,.16), transparent 42%),
+        #05080f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.card {
+    width: 100%;
+    max-width: 390px;
+    position: relative;
+    padding: 25px 21px 23px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, rgba(19,29,48,.97), rgba(7,11,21,.98));
+    border: 1px solid rgba(65,145,255,.35);
+    box-shadow:
+        0 0 35px rgba(0,112,255,.12),
+        0 0 55px rgba(255,35,65,.08),
+        inset 0 1px rgba(255,255,255,.08);
+    text-align: center;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), var(--red), transparent);
+    box-shadow: 0 0 15px var(--blue);
+}
+
+.top-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: rgba(20,137,255,.10);
+    border: 1px solid rgba(35,145,255,.3);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #78baff;
+    margin-bottom: 16px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #35e99a;
+    box-shadow: 0 0 9px #35e99a;
+}
+
+.logo-box {
+    width: 104px;
+    height: 104px;
+    margin: 0 auto 15px;
+    border-radius: 23px;
+    background: linear-gradient(145deg, rgba(20,125,255,.18), rgba(255,40,65,.13));
+    border: 1px solid rgba(100,160,255,.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(0,120,255,.19);
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(23px, 7vw, 30px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    background: linear-gradient(90deg, #ffffff 5%, #64b6ff 48%, #ff536a 95%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    margin-top: 9px;
+    color: #aab8cb;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 65px;
+    height: 3px;
+    border-radius: 10px;
+    margin: 17px auto;
+    background: linear-gradient(90deg, var(--blue), var(--red));
+    box-shadow: 0 0 12px rgba(40,130,255,.5);
+}
+
+.description {
+    color: #c2ccdc;
+    font-size: 12px;
+    line-height: 1.7;
+    max-width: 290px;
+    margin: 0 auto 19px;
+}
+
+.highlight-title {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #839bb9;
+    margin-bottom: 12px;
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 21px;
+}
+
+.highlight {
+    min-height: 66px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    padding: 11px 10px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, rgba(24,117,224,.12), rgba(255,255,255,.025));
+    border: 1px solid rgba(69,137,226,.2);
+}
+
+.highlight:nth-child(2),
+.highlight:nth-child(3) {
+    border-color: rgba(255,65,83,.19);
+    background: linear-gradient(135deg, rgba(255,55,75,.10), rgba(255,255,255,.02));
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    background: rgba(30,140,255,.16);
+    font-size: 15px;
+}
+
+.highlight:nth-child(2) .icon,
+.highlight:nth-child(3) .icon {
+    background: rgba(255,55,75,.13);
+}
+
+.highlight strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #f4f7ff;
+    margin-bottom: 4px;
+}
+
+.highlight small {
+    display: block;
+    font-size: 8px;
+    color: #9eacc0;
+    line-height: 1.3;
+}
+
+.join-btn {
+    width: 100%;
+    height: 53px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(100deg, #0879ee, #1557d9 52%, #e52e4c);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    cursor: pointer;
+    box-shadow: 0 5px 25px rgba(16,105,235,.28);
+    transition: .25s;
+}
+
+.join-btn:active {
+    transform: scale(.97);
+}
+
+.join-btn span {
+    margin-left: 8px;
+    font-size: 17px;
+    vertical-align: -1px;
+}
+
+.bottom-note {
+    margin-top: 14px;
+    color: #687990;
+    font-size: 9px;
+    letter-spacing: .6px;
+}
+
+.bottom-note b {
+    color: #9aabc1;
+}
+
+@media(max-height: 690px) {
+    .card {
+        padding: 17px 19px;
+    }
+
+    .logo-box {
+        width: 82px;
+        height: 82px;
+        margin-bottom: 10px;
+    }
+
+    .divider {
+        margin: 12px auto;
+    }
+
+    .description {
+        margin-bottom: 13px;
+    }
+
+    .highlights {
+        margin-bottom: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="top-label">
+        <span class="dot"></span>
+        CRICKET COMMUNITY
+    </div>
+
+    <div class="logo-box">
+        <img src="logo.png" alt="Vedant Rathore Logo">
+    </div>
+
+    <h1>VEDANT RATHORE</h1>
+
+    <div class="subtitle">CRICKET INSIGHTS & ANALYSIS</div>
+
+    <div class="divider"></div>
+
+    <p class="description">
+        A dedicated space for cricket enthusiasts who appreciate match insights, analysis and an informed approach to the game.
+    </p>
+
+    <div class="highlight-title">WHAT YOU CAN EXPLORE</div>
+
+    <div class="highlights">
+
+        <div class="highlight">
+            <div class="icon">🏏</div>
+            <div>
+                <strong>Match Insights</strong>
+                <small>Cricket match updates</small>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <div class="icon">📊</div>
+            <div>
+                <strong>Game Analysis</strong>
+                <small>Detailed match perspectives</small>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <div class="icon">🎯</div>
+            <div>
+                <strong>Match Focus</strong>
+                <small>Key game observations</small>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <div class="icon">⚡</div>
+            <div>
+                <strong>Regular Updates</strong>
+                <small>Stay connected with updates</small>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="join-btn" onclick="joinCommunity()">
+        JOIN COMMUNITY <span>➜</span>
+    </button>
+
+    <div class="bottom-note">
+        <b>VEDANT RATHORE</b> · CRICKET COMMUNITY
+    </div>
+
+</div>
+
+<script>
+function joinCommunity() {
+    window.open(
+        "https://t.me/+dAYEBf-fVqlmM2Q1",
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+</script>
+
+</body>
+</html>
+```
